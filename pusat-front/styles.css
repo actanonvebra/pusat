@@ -1,0 +1,203 @@
+@import url('https://fonts.cdnfonts.com/css/ocr-a-std');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'OCR A Std', sans-serif;
+    font-weight: bold;
+    background-color: rgb(199, 194, 194);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1px 30px;
+    background: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    border-bottom: 1px solid greenyellow;
+    padding-bottom: 1px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1px 30px;
+    background: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    border-top: 1px solid greenyellow;
+    padding-top: 1px;
+}
+
+.pusat {
+    font-size: 2.1em;
+    color: gainsboro;
+    text-align: left;
+}
+
+.created {
+    font-size: 2.1em;
+    color: gainsboro;
+    text-align: center;
+}
+
+.entryarea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    position: relative;
+    top: 50px;
+}
+
+input[type="text"] {
+    height: 50px;
+    width: 300px;
+    outline: none;
+    font-size: 1.1em;
+    padding: 0 30px;
+    border-radius: 60px;
+    border: 2px solid greenyellow;
+    background-color: rgb(223, 223, 223);
+    transition: 0.2s ease;
+    font-family: "Poppins", sans-serif;
+}
+
+.body-container {
+    position: relative;
+    overflow-x: hidden;
+}
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.background-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#info-container {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-box {
+    width: 90%;
+    margin: 10px 0;
+    padding: 11px;
+    color: white;
+    border-radius: 50px;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.8); /* Arka plan rengi ekledim */
+}
+
+.collapsible {
+    width: 100%;
+    overflow: hidden;
+}
+
+.collapsible input {
+    display: none;
+}
+
+.collapsible label {
+    display: block;
+    padding: 10px;
+    background-color: rgb(190, 190, 190);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 5px 11px 0 rgb(0, 0, 0), 0 4px 11px 0 rgb(104, 104, 104);
+    font-weight: 800;
+    position: relative;
+}
+
+.collapsible label:after {
+    content: "";
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 18px;
+    height: 18px;
+    transition: all 0.5s ease;
+}
+
+.collapsible input:checked + label:after {
+    transform: rotate(90deg);
+}
+
+.collapsible-text {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    background: #000000;
+    box-shadow: 0 5px 11px 0 rgb(0, 0, 0), 0 4px 11px 0 rgb(104, 104, 104);
+    padding: 0 15px;
+}
+
+.collapsible input:checked ~ .collapsible-text {
+    max-height: 1000px;
+    padding-bottom: 25px;
+    opacity: 1;
+}
+
+.collapsible-text h2 {
+    font-size: 1.2em; /* Font boyutunu diğer metinlerle uyumlu hale getirin */
+    margin: 10px 0;
+    color: rgb(233, 233, 233);
+}
+
+.collapsible-text .info-item,
+.collapsible-text .ports p {
+    font-size: 1.2em; /* Font boyutunu h2 ile aynı yapın */
+    margin: 10px 0;
+    margin-left: 20px;
+    color: rgb(233, 233, 233);
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 500;
+}
+
+/* Ports divi için stil güncellemeleri */
+.collapsible-text .ports {
+    margin-bottom: 10px; 
+    max-height: 200px; /* Maksimum yükseklik eklendi */
+    overflow-y: auto; /* Dikey kaydırma çubuğu eklendi */
+}
+
+.collapsible-text .status {
+    font-size: 2em; /* Font boyutunu küçültüldü */
+    color: rgba(255, 255, 255, 0.8); /* Beyaz renk ve opaklık artırıldı */
+    text-align: center;
+    margin-top: 20px; /* Üstüne boşluk eklendi */
+}
+
+.collapsible-text .status-safe {
+    color: green;
+}
+
+.collapsible-text .status-malicious {
+    color: red;
+}
+

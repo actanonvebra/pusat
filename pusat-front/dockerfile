@@ -1,0 +1,13 @@
+FROM nginx
+
+COPY nginx.conf /etc/nginx/conf.d/
+
+COPY index.html /usr/share/nginx/html/
+COPY styles.css /usr/share/nginx/html/
+COPY script.js /usr/share/nginx/html/
+COPY back.jpg /usr/share/nginx/html/
+COPY binoculars.png /usr/share/nginx/html/
+COPY a.jpg /usr/share/nginx/html/
+COPY nginx.conf /usr/share/nginx/html/
+
+

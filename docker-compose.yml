@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+
+  pusat-api:
+    build:
+      context: ./pusat-api
+    container_name: pusat-api
+    ports:
+      - "8010:8010"
+
+  pusat-mlapi:
+    build:
+      context: ./pusat-mlapi
+    container_name: pusat-mlapi
+    ports:
+      - "8000:8000"
+  pusat-front:
+    build:
+      context: ./pusat-front
+    container_name: pusat-front
+    ports:
+      - "80:80"
